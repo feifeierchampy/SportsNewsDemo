@@ -2,8 +2,6 @@ package com.test.sportsnewsdemo.view;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.os.Handler;
-import android.os.Message;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,13 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import com.test.sportsnewsdemo.R;
 import com.test.sportsnewsdemo.adapter.RecyclerViewAdpater;
 import com.test.sportsnewsdemo.bean.News;
-import com.test.sportsnewsdemo.parser.ParseHtml;
 import com.test.sportsnewsdemo.presenter.NewsPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends Activity implements IMainView {
 
@@ -68,5 +63,10 @@ public class MainActivity extends Activity implements IMainView {
     @Override
     public void showNewsList(List<News> mDatas) {
         mAdapter.setmDatas(mDatas);
+    }
+
+    public class MyClass{
+        MyClass(){}
+        int i;
     }
 }

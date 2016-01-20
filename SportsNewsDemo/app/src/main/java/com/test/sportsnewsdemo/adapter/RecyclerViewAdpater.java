@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.test.sportsnewsdemo.R;
 import com.test.sportsnewsdemo.bean.News;
+import com.test.sportsnewsdemo.cache.ImageLoader;
 
 import java.util.List;
 
@@ -50,8 +51,10 @@ public class RecyclerViewAdpater extends RecyclerView.Adapter<RecyclerViewAdpate
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
 
-        myViewHolder.imageView.setImageResource(R.drawable.send_btn_pressed);
-//        myViewHolder.imageView.setImageBitmap(ParseHtml.getmInstance().getBitmapFromUrl(mDatas.get(i).getImgStr()));
+//        myViewHolder.imageView.setImageResource(R.drawable.send_btn_pressed);
+
+        ImageLoader.getInstance().loadImage(mDatas.get(i).getImgStr(), myViewHolder.imageView);
+
         myViewHolder.titleTextView.setText(mDatas.get(i).getTitle());
         myViewHolder.detailTextView.setText(mDatas.get(i).getDetail());
 

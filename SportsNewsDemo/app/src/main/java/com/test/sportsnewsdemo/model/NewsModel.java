@@ -73,10 +73,7 @@ public class NewsModel {
                         news.setImgStr(imgSrc);
                         mNewsList.add(news);
 
-//                        Message msg = Message.obtain();
-//                        msg.obj = mDatas;
-//                        msg.what = 222;
-//                        mHandler.sendMessage(msg);
+
                         Logger.show(TAG, imgSrc);
                         Logger.show(TAG, title);
                         Logger.show(TAG, detail);
@@ -106,34 +103,34 @@ public class NewsModel {
      *
      * @param path
      */
-    public Bitmap getBitmapFromInternet(final String path) {
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    Bitmap bitmap = null;
-                    URLConnection conn = null;
-                    java.net.URL url = new URL(path);
-
-                    conn = url.openConnection();
-
-                    //设置超时时间
-                    conn.setConnectTimeout(10000);
-                    conn.connect();
-                    InputStream in;
-                    in = conn.getInputStream();
-                    bitmap = BitmapFactory.decodeStream(in);
-                    return bitmap
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-    }
+//    public Bitmap getBitmapFromInternet(final String path) {
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    Bitmap bitmap = null;
+//                    URLConnection conn = null;
+//                    java.net.URL url = new URL(path);
+//
+//                    conn = url.openConnection();
+//
+//                    //设置超时时间
+//                    conn.setConnectTimeout(10000);
+//                    conn.connect();
+//                    InputStream in;
+//                    in = conn.getInputStream();
+//                    bitmap = BitmapFactory.decodeStream(in);
+//                    return bitmap
+//
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }.start();
+//    }
 
 
 }
